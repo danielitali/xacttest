@@ -1,0 +1,89 @@
+<mvc:View
+	controllerName="sap.ui.demo.wt.controller.SmartTable"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="sap.m">
+	<Page title="Xact SAPUI5 Developer's Test - Products List">
+	<Table id="idProductsTable"
+		mode="SingleSelectMaster"
+		itemPress="onItemPress" 
+		press="onItemPress" 
+		inset="false"
+		items="{
+			parameters:{expand : 'Category,Supplier'},
+			path: 'mymodel>/Products',
+			sorter: {
+				path: 'ID'
+			}
+		}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>productsTitle}" level="H2"/>
+				<ToolbarSpacer/>		
+				<Button justifyContent="End" text="{i18n>createdby}" press="onPress" />
+				<Button text="{i18n>backToHome}" press="onLink"/>
+				<SearchField width="50%" search="onFilterInvoices" selectOnFocus="false"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="12em">
+				<Text text="{i18n>productsID}" />
+			</Column>
+			<Column
+				width="12em">
+				<Text text="{i18n>productsName}" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="{i18n>productsDescription}" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true"
+				hAlign="Right">
+				<Text text="{i18n>productsReleaseDate}" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="{i18n>productsRating}" />
+			</Column>
+			<Column
+				hAlign="Right">
+				<Text text="{i18n>productsPrice}" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Active">
+				<cells>
+					<ObjectIdentifier
+						text="{mymodel>ID}"/>
+					<ObjectIdentifier
+						title="{mymodel>Name}"/>						
+					<Text
+						text="{mymodel>Description}" />
+					<Text
+						text="{mymodel>ReleaseDate}" />
+					<ObjectNumber
+						number="{mymodel>Rating}"
+						state="{=	${mymodel>Rating} >= 4 ? 'Success' : 'Error' }" />
+					<ObjectNumber
+							number="{
+					parts: [{path: 'mymodel>Price'}, {path: 'view>/currency'}],
+					type: 'sap.ui.model.type.Currency',
+					formatOptions: {
+						showMeasure: false
+					}
+				}"
+				numberUnit="{view>/currency}"
+				/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</Page>
+</mvc:View>

@@ -1,0 +1,19 @@
+<mvc:View
+	controllerName="sap.ui.demo.wt.controller.Homepage"
+	xmlns:l="sap.ui.layout"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true">
+	<Page title="Xact SAPUI5 Developer's Test - Homepage">
+	<Panel>
+		<headerToolbar>
+			<Toolbar height="3rem">
+				<Title text="{i18n>helloPanelTitle}" level="H2"/>
+				<ToolbarSpacer/>
+				<Button text="{i18n>productsTitle}" press="onLink"/>
+			</Toolbar>
+		</headerToolbar>		
+	</Panel>
+</Page>
+</mvc:View>

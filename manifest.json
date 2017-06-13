@@ -1,0 +1,109 @@
+{
+  "_version": "1.1.0",
+  "sap.app": {
+    "_version": "1.1.0",
+    "id": "sap.ui.demo.wt",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "dataSources": {
+      "productmodel": {
+        "uri": "https://cors-anywhere.herokuapp.com/http://services.odata.org/V2/OData/OData.svc",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "_version": "1.1.0",
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "sap_bluecrystal"
+    ]
+  },
+  "sap.ui5": {
+    "_version": "1.1.0",
+    "rootView": "sap.ui.demo.wt.view.App",
+    "dependencies": {
+      "minUI5Version": "1.30",
+      "libs": {
+        "sap.m": {}
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.ui.demo.wt.i18n.i18n"
+        }
+      },
+      "products": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "Products.json"
+      },
+      "suppliers": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "Suppliers.json"
+      },
+      "categories": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "Categories.json"
+      },
+      "mymodel": {
+        "preload": true,
+        "dataSource": "productmodel",
+        "settings": {}
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "sap.ui.demo.wt.view",
+        "controlId": "xactTest",
+        "transition": "slide",
+        "controlAggregation": "pages"
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "homepage",
+          "target": "homepage"
+        },
+        {
+          "pattern": "SmartTable",
+          "name": "smarttable",
+          "target": "smarttable"
+        }
+      ],
+      "targets": {
+        "homepage": {
+          "viewName": "Homepage",
+          "viewLevel": 0
+        },
+        "smarttable": {
+          "viewName": "SmartTable",
+          "viewLevel": 1
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    }
+  }
+}
