@@ -11,6 +11,7 @@ function (UIComponent, JSONModel, HelloDialog) {
 			manifest : "json",
 		},
 		init : function () {
+			sap.ui.getCore().loadLibrary("openui5.googlemaps", "externalResources/googlemaps");
 			// call the init function of the parent
 			UIComponent.prototype.init.apply(this, arguments);
 			// set dialog

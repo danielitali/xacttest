@@ -4,31 +4,32 @@
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:gmaps="openui5.googlemaps"
 	displayBlock="true">
 	<Page title="Xact SAPUI5 Developer's Test - Homepage">
 	<Panel>
 		<headerToolbar>
 			<Toolbar height="3rem">
-				<Title text="{i18n>helloPanelTitle}" level="H2"/>
+				<Title text="{i18n>helloPanelTitle} - {i18n>suppliersTitle}" level="H2"/>
 				<ToolbarSpacer/>
 				<Button text="{i18n>productsTitle}" press="onLink"/>
 			</Toolbar>
-		</headerToolbar>	
-		<List
-		headerText="{i18n>suppliersTitle}"
-		items="{
-			path: 'mymodel>/Suppliers',
-			sorter: {
-				path: 'ID'
-			}
-		}" >
-		<items>
-		<ObjectListItem
-			title="{mymodel>Name}">
-        
-		</ObjectListItem>
-	</items>
-	</List>	
+		</headerToolbar>
+		<html:center>	
+			
+	<Title text= "Exotic Liquids" level="h2" class="supplierTitle"/>
+	<gmaps:Map height="400px" width="400px" zoom="12" lng="-122.03547668457" lat="47.6316604614258">
+                    <gmaps:markers>
+                        <gmaps:Marker lng="-122.03547668457" lat="47.6316604614258" info="Exotic Liquids" />
+                    </gmaps:markers>
+                </gmaps:Map>
+     <Title text= "Tokyo Traders" class="supplierTitle"/>           
+	<gmaps:Map height="400px" width="400px" zoom="12" lng="-122.107711791992" lat="47.6472206115723">
+	                    <gmaps:markers>
+	                        <gmaps:Marker lng="-122.107711791992" lat="47.6472206115723" info="Exotic Liquids" />
+	                    </gmaps:markers>
+	                </gmaps:Map>
+            </html:center>
 	</Panel>
 </Page>
 </mvc:View>
