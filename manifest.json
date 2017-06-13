@@ -48,18 +48,6 @@
           "bundleName": "sap.ui.demo.wt.i18n.i18n"
         }
       },
-      "products": {
-        "type": "sap.ui.model.json.JSONModel",
-        "uri": "Products.json"
-      },
-      "suppliers": {
-        "type": "sap.ui.model.json.JSONModel",
-        "uri": "Suppliers.json"
-      },
-      "categories": {
-        "type": "sap.ui.model.json.JSONModel",
-        "uri": "Categories.json"
-      },
       "mymodel": {
         "preload": true,
         "dataSource": "productmodel",
