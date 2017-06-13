@@ -3,7 +3,6 @@ sap.ui.define([
 ], function (Controller) {
    "use strict";
    return Controller.extend("sap.ui.demo.wt.controller.Homepage", {
-
 	   onLink: function()
 	   {
 		   this.getOwnerComponent().getRouter().navTo("smarttable");

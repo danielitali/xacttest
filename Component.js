@@ -3,7 +3,8 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/demo/wt/controller/HelloDialog"
 
-], function (UIComponent, JSONModel, HelloDialog) {
+], 
+function (UIComponent, JSONModel, HelloDialog) {
 	"use strict";
 	return UIComponent.extend("sap.ui.demo.wt.Component", {
 		metadata : {
