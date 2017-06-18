@@ -24,7 +24,7 @@
                     </gmaps:markers>
                 </gmaps:Map>
      <Title text= "Tokyo Traders" class="supplierTitle"/>           
-	<gmaps:Map height="400px" width="400px" zoom="12" lng="-122.107711791992" lat="47.6472206115723">
+	<gmaps:Map height="400px" width="400px" zoom="12" lng="-122.107711791992" lat="47.6472206115723" >
 	                    <gmaps:markers>
 	                        <gmaps:Marker lng="-122.107711791992" lat="47.6472206115723" info="Exotic Liquids" />
 	                    </gmaps:markers>
